@@ -6,6 +6,7 @@
 
 
 
+#a max heap is the same just the opposite of what's happening here basically
 class MinHeap:
     def __init__(self):
         self.size = 0
@@ -83,7 +84,6 @@ class MinHeap:
             else:
                 self.swap(index, smaller_child_index)
                 index = smaller_child_index
-        print(self.items)
 
     def heapify_up(self):
         index = self.size - 1
