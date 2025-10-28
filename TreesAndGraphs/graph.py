@@ -3,7 +3,7 @@
 #in the adjacecy list you have to have a graph class because unlike a tree where you can just 
 #get to every element using the root node, you can't do the same for the graph. because it might not be connected
 
-import collections.abc
+import collections
 #Adjacency List
 from typing import Dict, Self,List
 
@@ -35,8 +35,7 @@ def breadth_first_search(node:Node):
     node.marked = True
     queue.append(node)
 
-
-    while queue.__len__() > 0: 
+    while len(queue) > 0: 
         r = queue.popleft()
         print(r.name)
 
@@ -44,7 +43,18 @@ def breadth_first_search(node:Node):
             if child.marked is False: 
                 child.marked = True
                 queue.append(child)
-                 
+
+
+def depth_first_search(node:Node):
+    if node is None: 
+        return 
+    node.marked = True
+    print(node.name)
+
+    for child in node.children:
+        if child.marked is False: 
+            depth_first_search(child)
+
 
 if __name__ == "__main__":
     node_one = Node("A")
@@ -67,7 +77,10 @@ if __name__ == "__main__":
     graph.add_edge("C","E")
     graph.add_edge("D","E")
 
-    breadth_first_search(node_one)
+    print("bfs")
+    # breadth_first_search(node_one)
+    print("dfs")
+    depth_first_search(node_one)
 
     # for key, value in graph.nodes.items(): 
     #     print(key,":",value.children)
