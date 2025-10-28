@@ -10,6 +10,7 @@
 - API documentation/usage
 - Generating test cases and assert statements for algorithms (no comments)
 - Coming up with example inputs to test algorithms
+- Guidance to what the answer to a question is without actually revealing what the answer to the question is 
 
 ## Test Case Guidelines
 - Provide only test data and assert statements
